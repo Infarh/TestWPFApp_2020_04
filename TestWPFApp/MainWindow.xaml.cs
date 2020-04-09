@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
 
 namespace TestWPFApp
 {
@@ -36,6 +38,27 @@ namespace TestWPFApp
         {
             //ButtonRotator.Angle = RotateAngleSlider.Value;
             //TestButton.Content = RotateAngleSlider.Value;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void OpenMenu_Click(object sender, RoutedEventArgs e)
+        {
+            var open_dialog = new OpenFileDialog
+            {
+                Title = "Открыть файл",
+                Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
+            };
+
+            if(open_dialog.ShowDialog() != true) return;
+
+            var file_name = open_dialog.FileName;
+
+            var file_text = File.ReadAllText(file_name);
+            TextEditor.Text = file_text;
         }
     }
 }

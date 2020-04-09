@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="378" Width="648">
     <Grid>
-       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть" Click="OpenMenu_Click"/>
+                <MenuItem Header="Закрыть"/>
+                <MenuItem Header="Сохранить"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Вид"></MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar Grid.Row="2">
+            <TextBlock Text="Готов к труду и обороне!"/>
+        </StatusBar>
+        <GroupBox Grid.Row="1" 
+                  Margin="10,20,30,40"
+                  Header="Текстовое поле">
+            <TextBox AcceptsReturn="True" Name="TextEditor"/>
+        </GroupBox>
     </Grid>
 </Window>
