@@ -7,20 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="TestButton"
-                Content="Кнопка"
-                Margin="340,142,377,0"
-                VerticalAlignment="Top" 
-                Click="Button_Click"
-                RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <RotateTransform x:Name="ButtonRotator" Angle="-54.281"/>
-            </Button.RenderTransform>
-        </Button>
-        <Slider Name="RotateAngleSlider" Margin="266,0,260,186"
-                VerticalAlignment="Bottom"
-                Minimum="-360"
-                Maximum="+360" 
-                ValueChanged="RotateAngleSlider_ValueChanged"/>
+       
     </Grid>
 </Window>
