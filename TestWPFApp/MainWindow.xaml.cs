@@ -23,11 +23,19 @@ namespace TestWPFApp
         public MainWindow()
         {
             InitializeComponent();
+
+            Title = "Hello World!";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Кнопка нажата!");
+        }
+
+        private void RotateAngleSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ButtonRotator.Angle = RotateAngleSlider.Value;
+            TestButton.Content = RotateAngleSlider.Value;
         }
     }
 }
